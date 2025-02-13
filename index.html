@@ -51,11 +51,14 @@
             class="mb-3 col-3 border rounded"
             id="multiplication2"
           />
+          <button type="button" onclick="multiplie()" class="rounded-3 w-50">
+            Voir Résultat
+          </button>
           <p class="mx-auto mb-3 col-1 text-center">=</p>
           <p class="mb-3 border rounded w-25" id="multiplicationresult"></p>
         </div>
       </form>
-      <form action="#" id="Form2">
+      <form action="#" id="Form2" class="mt-5">
         <p>Veillez renseigner deux nombres pour faire une division.</p>
         <div class="row">
           <input
@@ -73,7 +76,7 @@
           <p class="mb-3 border rounded w-25" id="divisionResult"></p>
         </div>
       </form>
-      <form action="#" id="Form3">
+      <form action="#" id="Form3" class="mt-5">
         <p>Veillez renseigner un nombres pour calculer son factoriel.</p>
         <div class="row">
           <input
@@ -83,6 +86,26 @@
           />
           <p class="me-2 mb-3 col-1 text-center">=</p>
           <p class="mb-3 border rounded w-50" id="factorielResult"></p>
+        </div>
+      </form>
+      <form action="#" id="Form4" class="mt-5">
+        <p>Veillez renseigner un nombres pour calculer son modulo par 4.</p>
+        <div class="row">
+          <input type="number" class="mb-3 col-4 border rounded" id="modulo" />
+          <p class="me-2 mb-3 col-1 text-center">=</p>
+          <p class="mb-3 rounded w-50" id="moduloResult"></p>
+        </div>
+      </form>
+      <form action="#" id="Form5" class="mt-5">
+        <p>
+          Saisissez les notes de vos éléves et veillez à mettre une virgule
+          aprés chaque note !
+        </p>
+        <div class="row">
+          <input type="text" class="mb-3 col-4 border rounded" id="notes" />
+          <p class="me-2 mb-3 col-1 text-center">=</p>
+          <p class="mb-3 rounded border w-50" id="notesMoyenne"></p>
+          <p class="rounded border p-1" id="elevesSupMoyenne"></p>
         </div>
       </form>
     </div>

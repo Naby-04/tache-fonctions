@@ -4,7 +4,8 @@ const multiplication1 = document.getElementById("multiplication1");
 const multiplication2 = document.getElementById("multiplication2");
 const multiplicationresult = document.getElementById("multiplicationresult");
 // -----------------------
-Form1.addEventListener("input", function () {
+// Affiche le résultat
+function multiplie() {
   var resultat;
   // Récupère les valeurs des inputs
   var premierNombre = Number(multiplication1.value);
@@ -12,12 +13,10 @@ Form1.addEventListener("input", function () {
 
   // Calcule le résultat
   resultat = premierNombre * deuxiemeNombre;
-
-  // Affiche le résultat
   multiplicationresult.textContent = isNaN(resultat)
     ? "Veuillez entrer des nombres valides"
     : resultat;
-});
+}
 
 // -------------déclaration des variables pour l'exo numero 2
 const Form2 = document.getElementById("Form2");
@@ -69,4 +68,66 @@ Form3.addEventListener("input", function () {
   factorielResult.textContent = isNaN(resultat)
     ? "Veuillez entrer des nombres valides"
     : resultat;
+});
+
+// -------------déclaration des variables pour l'exo numero 4
+const Form4 = document.getElementById("Form4");
+const modulo = document.getElementById("modulo");
+const moduloResult = document.getElementById("moduloResult");
+// -----------------------
+Form4.addEventListener("input", function () {
+  var resultat;
+  // Récupère les valeurs des inputs
+  var moduloNombre = Number(modulo.value);
+
+  // Calcule le résultat
+  resultat = moduloNombre % 4;
+
+  // Affiche le résultat
+  moduloResult.textContent = isNaN(resultat)
+    ? "Veuillez entrer des nombres valides"
+    : "Si l'on divise " + moduloNombre + " par 4, le reste est de " + resultat;
+});
+
+// -------------déclaration des variables pour l'exo numero 5
+const Form5 = document.getElementById("Form5");
+const notes = document.getElementById("notes");
+const notesMoyenne = document.getElementById("notesMoyenne");
+const elevesSupMoyenne = document.getElementById("elevesSupMoyenne");
+// -----------------------
+Form5.addEventListener("input", function () {
+  var resultat;
+  // Récupère les valeurs des inputs
+  var notesEleves = notes.value.split(",").map(Number);
+
+  // Calcule le résultat
+  function moyenne(notesEleves) {
+    let somme = 0;
+    for (let i = 0; i < notesEleves.length; i++) {
+      somme += notesEleves[i];
+    }
+    return somme / notesEleves.length;
+  }
+
+  function eleveSupMoyenne(notesEleves) {
+    let moyenneNotes = moyenne(notesEleves);
+    let elevesSup = 0;
+    for (let i = 0; i < notesEleves.length; i++) {
+      if (notesEleves[i] > moyenneNotes) {
+        elevesSup++;
+      }
+    }
+    return elevesSup;
+  }
+
+  resultat = moyenne(notesEleves);
+  elevesSup = eleveSupMoyenne(notesEleves);
+
+  // Affiche le résultat
+  notesMoyenne.textContent = isNaN(resultat)
+    ? "Veuillez entrer des nombres valides"
+    : "La moyenne des notes est de " + resultat;
+  elevesSupMoyenne.textContent = isNaN(elevesSup)
+    ? "Veuillez entrer des nombres valides"
+    : "Il y a " + elevesSup + " élèves ayant une note supérieure à la moyenne";
 });
